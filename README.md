@@ -1,20 +1,19 @@
-```
-# Multi-Paradigm Cognitive Workload Classification Pipeline
+Multi-Paradigm Cognitive Workload Classification Pipeline
 
-### **Author:** Delucie Rurangwa  
-### **Institution:** African Leadership University (ALU)  
-### **Core Domain:** Machine Learning, Deep Learning Topologies, Tabular Telemetry, Human-Computer Interaction (HCI)
+ **Author:** Delucie Rurangwa  
+ **Institution:** African Leadership University (ALU)  
+ **Core Domain:** Machine Learning, Deep Learning Topologies, Tabular Telemetry, Human-Computer Interaction (HCI)
 
----
 
-##  Project Overview & Engineering Goals
+
+  Project Overview & Engineering Goals
 In high-stress operational environments, human operators are constantly bombarded with intense streams of data telemetry. When dynamic task complexity breaches an individual's psychological or cognitive thresholds, cognitive fatigue triggers sharp drops in performance and operational breakdowns. 
 
 This project establishes a comprehensive, end-to-end data processing and modeling pipeline to classify human cognitive workload into three distinct operational bands (**Low, Medium, and High**) using high-dimensional tabular telemetry data. 
 
 Rather than deploying an arbitrary model architecture, this repository documents a rigorous **7-stage incremental experimental progression**. It systematically evaluates the structural and performance trade-offs between classical statistical learning frameworks (Scikit-Learn) and deep neural network topologies (TensorFlow/Keras). The ultimate objective is to demonstrate how custom structural modifications—specifically multi-branch shortcut paths (skip-connections), input dropout shields, and validation-driven early stopping—can optimize non-linear representation capacity on sparse tabular arrays while ensuring absolute generalization safety.
 
----
+
 
 ##  Automated Preprocessing Architecture & Data Integrity
 To protect against data leakage and ensure 100% algorithmic reproducibility across different computational runs, the data pipeline follows a strict functional sequence:
@@ -25,13 +24,13 @@ To protect against data leakage and ensure 100% algorithmic reproducibility acro
 4. **Data Streaming Optimization:** The processed arrays are passed directly into the **`tf.data` API pipeline**, applying automated batching and prefetching algorithms to optimize low-memory execution and training throughput.
 5. **Deterministic Matrix Splitting:** The data pool is partitioned into a clean **80% Training subset** for optimization and a completely isolated **20% Testing subset** to validate true model generalization.
 
----
+
 
 ##  The 7-Experiment Architecture & Progression Rationale
 
 The optimization pipeline systematically iterates through the following structural configurations to evaluate core learning theories:
 
-* **Experiment 1: Logistic Regression Baseline** * *Configuration:* L2 Regularization, Inverse Strength $C=1.0$, Max Iterations $= 1000$.  
+**Experiment 1: Logistic Regression Baseline** * *Configuration:* L2 Regularization, Inverse Strength $C=1.0$, Max Iterations $= 1000$.  
   * *Rationale:* Establishes a foundational performance baseline for linear hyper-plane separation.
 * **Experiment 2: Random Forest Ensemble** * *Configuration:* 100 Estimators, Unbounded Depth (`None`), Gini Impurity, Balanced Class Weights.  
   * *Rationale:* Tests non-linear ensemble behavior and orthogonal splitting logic on tabular attributes.
